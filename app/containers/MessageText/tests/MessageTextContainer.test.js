@@ -36,8 +36,9 @@ describe('<MessageTextContainer/>', () => {
     const event = {target: {value: 'This works, but is not called by a Sinon spy'}}
 
     expect(handleChangeSpy.calledOnce).to.equal(false)
-    MessageTextAreaComponent.simulate('change', event)
+    MessageTextAreaComponent.prop('onChangeText')(event)
     expect(handleChangeSpy.calledOnce).to.equal(true)
+    handleChangeSpy.restore()
   })
 
   it('should bind handleSubmit() function to <MessageTextArea/>', () => {
@@ -52,5 +53,6 @@ describe('<MessageTextContainer/>', () => {
     expect(handleSubmitSpy.calledOnce).to.equal(false)
     MessageTextAreaComponent.prop('onSubmitText')()
     expect(handleSubmitSpy.calledOnce).to.equal(true)
+    handleSubmitSpy.restore()
   })
 })
