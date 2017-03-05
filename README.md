@@ -5,3 +5,5 @@ A sample of TDD in React with Enzyme, particularly to isolate an interesting cas
 
 Simply `npm install` the dependencies, `npm run start` to run the app, and
 `npm run test` to run Mocha's test runner.
+
+Node version should be >= 6.x
